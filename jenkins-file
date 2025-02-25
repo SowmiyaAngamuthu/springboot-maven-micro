@@ -24,6 +24,15 @@ stage('Building the Image') {
         }
     }
     }
-		
+stage ('Deploy the Image to Amazon ECR') {
+       steps {
+           script {
+           docker.withRegistry("http://" + registry, "ecr:ca-central-1:" + registryCredential ) {
+           dockerImage.push()
+     }
+   }
+  }
+}
+}		
 }
 }
