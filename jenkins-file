@@ -34,5 +34,5 @@ stage ('Deploy the Image to Amazon ECR') {
   }
 }
 }		
-}
+
 }
